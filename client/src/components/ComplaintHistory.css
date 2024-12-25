@@ -1,0 +1,91 @@
+/* ComplaintHistory.css */
+.complaint-history-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .loading-text,
+  .error-text,
+  .no-complaints-text {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  .complaint-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .complaint-item {
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin: 15px 0;
+    padding: 15px;
+    transition: transform 0.3s ease;
+  }
+  
+  .complaint-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .complaint-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .complaint-title {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .status {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
+  .status.pending {
+    background-color: #ffcc00;
+    color: #fff;
+  }
+  
+  .status.in-progress {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .status.completed {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .complaint-description {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .complaint-feedback {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .complaint-feedback strong {
+    font-weight: bold;
+  }
+  

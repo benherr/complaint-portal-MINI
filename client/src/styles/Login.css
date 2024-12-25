@@ -1,0 +1,99 @@
+/* src/styles/Login.css */
+
+body {
+    background-image: url('../assets/images/bg_home2.jpeg'); /* Update the path to your background image */
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Container for the login form */
+.container {
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for the form */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    max-width: 400px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+/* Heading for the login form */
+.container h2 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Input fields styling */
+.container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.container input:focus {
+    outline: none;
+    border-color: #007bff; /* Blue border on focus */
+}
+
+/* Submit button styling */
+.container button {
+    background-color: #447fbe;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.container button:hover {
+    background-color: #356bb3; /* Darker blue on hover */
+}
+
+/* Success message styling */
+.success {
+    color: green;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+/* Error message styling */
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+/* Footer styling */
+.container p {
+    font-size: 14px;
+    color: #555;
+}
+
+.container p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.container p a:hover {
+    color: #0056b3;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 500px) {
+    .container {
+        padding: 20px;
+        width: 90%;
+    }
+}

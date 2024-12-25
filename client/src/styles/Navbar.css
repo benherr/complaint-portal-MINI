@@ -1,0 +1,40 @@
+/* src/styles/Navbar.css */
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* This is for potential right-side content */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(44, 62, 80, 0.7); /* Semi-transparent background */
+    color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 100%; /* Full width of the screen */
+    position: fixed; /* Fixed position to stay at the top */
+    top: 0; /* Stick to the top */
+    left: 0; /* Start from the left */
+    z-index: 1000; /* Ensure it stays above other content */
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Add some space between the logo and the text */
+  }
+  
+  .logo-image {
+    height: 50px; /* Adjusted height for logo */
+    width: auto;
+    max-width: 100%;
+  }
+  
+  .navbar-title {
+    margin: 0;
+    font-size: 24px; /* Font size for visibility */
+    color: #f7f9fb; /* Off-white color */
+  }
+  

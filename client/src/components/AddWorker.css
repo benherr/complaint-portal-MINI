@@ -1,0 +1,98 @@
+/* Add Worker Component Styles */
+.add-worker-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.add-worker-container h3 {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.add-worker-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  font-size: 1em;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 4px rgba(0, 91, 255, 0.3);
+}
+
+.submit-button {
+  padding: 12px;
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+.error {
+  margin-top: 15px;
+  color: #dc3545;
+  background-color: #f8d7da;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #f5c2c7;
+  text-align: center;
+}
+
+.success {
+  margin-top: 15px;
+  color: #155724;
+  background-color: #d4edda;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #c3e6cb;
+  text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+  .add-worker-container {
+    padding: 15px;
+    width: 90%;
+  }
+
+  .add-worker-container h3 {
+    font-size: 1.5em;
+  }
+
+  .input-field,
+  .submit-button {
+    font-size: 1em;
+  }
+}
