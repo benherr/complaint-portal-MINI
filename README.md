@@ -34,7 +34,7 @@ The system enables administrators to manage complaints, track issues, and ensure
 
 # 🖼️ Application Screenshots
 
-### 🏠 Home Page
+### Home Page
 
 <p align="center">
 <img src="./Images/Home.png" width="420"/>
@@ -44,6 +44,7 @@ The system enables administrators to manage complaints, track issues, and ensure
 <img src="./Images/login.png" width="420"/>
 &nbsp;&nbsp;
 <img src="./Images/register.png" width="420"/>
+  &nbsp;&nbsp;
 </p>
 
 ---
