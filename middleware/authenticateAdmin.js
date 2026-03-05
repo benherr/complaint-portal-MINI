@@ -8,20 +8,17 @@ const authenticateAdmin = (req, res, next) => {
   }
 
   try {
-    // Verify the token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    console.log("Decoded token:", decoded);  // Log the decoded token for debugging
-    req.user = decoded;  // Store the decoded JWT payload (user info) in req.user
+    console.log("Decoded token:", decoded); 
+    req.user = decoded;  
 
-    // Check if the user is an admin
     if (req.user.role !== "admin") {
       return res.status(403).json({ message: "You do not have admin privileges" });
     }
 
-    // Proceed to the next middleware or route handler
     next();
   } catch (err) {
-    console.error("Token verification error:", err);  // Log the error for debugging
+    console.error("Token verification error:", err);  
     return res.status(401).json({ message: "Invalid token" });
   }
 };

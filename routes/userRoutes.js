@@ -10,16 +10,16 @@ const router = express.Router();
 // Register a new user
 router.post("/register", async (req, res) => {
   try {
-    const { username, name, email, password } = req.body; // Added username field
+    const { name, email, password } = req.body;
 
-    // Check if the email or username already exists
-    const existingUser = await User.findOne({ $or: [{ username }, { email }] });
+    // Check if the email already exists
+    const existingUser = await User.findOne({ email });
     if (existingUser) {
-      return res.status(400).json({ message: "Username or email already exists" });
+      return res.status(400).json({ message: "Email already exists" });
     }
 
-    // Create a new user with username, name, email, and password
-    const user = new User({ username, name, email, password });
+    // Create a new user with name, email, and password
+    const user = new User({ name, email, password });
     await user.save();
     res.status(201).json({ message: "User registered successfully" });
   } catch (error) {

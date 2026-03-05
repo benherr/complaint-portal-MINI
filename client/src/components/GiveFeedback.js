@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import { useToast } from "../context/ToastContext";
 
 function GiveFeedback() {
   const [complaint, setComplaint] = useState(null);
@@ -8,6 +9,7 @@ function GiveFeedback() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const { complaintId } = useParams(); // Get the complaint ID from the URL
+  const { success, error: showError } = useToast();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -51,10 +53,14 @@ function GiveFeedback() {
           },
         }
       );
-      alert("Feedback submitted successfully");
-      navigate("/dashboard"); // Redirect to the dashboard after submission
+      success("Feedback submitted successfully");
+      setTimeout(() => {
+        navigate("/dashboard"); // Redirect to the dashboard after submission
+      }, 1000);
     } catch (error) {
-      setError("Error submitting feedback.");
+      const errorMessage = error.response?.data?.message || "Error submitting feedback.";
+      setError(errorMessage);
+      showError(errorMessage);
     }
   };
 

@@ -8,16 +8,15 @@ const authenticateWorker = (req, res, next) => {
   }
 
   try {
-    // Verify the token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.worker = decoded;  // Store the decoded JWT payload (worker info) in req.worker
+    req.worker = decoded;  
 
-    // Check if the user is a worker
+
     if (req.worker.role !== "worker") {
       return res.status(403).json({ message: "You do not have worker privileges" });
     }
 
-    // Proceed to the next middleware or route handler
+
     next();
   } catch (err) {
     console.error("Token verification error:", err);

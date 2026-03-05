@@ -1,4 +1,3 @@
-// middleware/adminAuth.js
 const jwt = require("jsonwebtoken");
 
 function adminAuth(req, res, next) {

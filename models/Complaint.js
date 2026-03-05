@@ -10,18 +10,18 @@ const complaintSchema = new mongoose.Schema(
     status: { type: String, default: "Pending" },
     feedback: [
       {
-        userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" }, // Reference to the User model who gave feedback
-        text: { type: String }, // Feedback message
-        createdAt: { type: Date, default: Date.now }, // Timestamp for when feedback was given
+        userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" }, 
+        text: { type: String }, 
+        createdAt: { type: Date, default: Date.now },
       },
     ],
     userId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User", // Reference to the User model
-      required: true, // Ensure every complaint is associated with a user
+      ref: "User", 
+      required: true, 
     },
   },
-  { timestamps: true } // Add timestamps to track creation and update time
+  { timestamps: true } 
 );
 
 const Complaint = mongoose.model("Complaint", complaintSchema);

@@ -6,7 +6,6 @@ const verifyAdminToken = require("../middleware/verifyAdminToken");
 
 const router = express.Router();
 
-// Set up file upload storage
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "./uploads/");
@@ -17,7 +16,6 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-// Submit a complaint
 router.post("/submit", authenticate, upload.single("media"), async (req, res) => {
   try {
     const { title, department, category, description } = req.body;
@@ -36,7 +34,6 @@ router.post("/submit", authenticate, upload.single("media"), async (req, res) =>
   }
 });
 
-// Fetch all complaints for admin
 router.get("/all", verifyAdminToken, async (req, res) => {
   try {
     const complaints = await Complaint.find();
@@ -46,7 +43,6 @@ router.get("/all", verifyAdminToken, async (req, res) => {
   }
 });
 
-// Fetch a single complaint by its ID (for details, including feedback)
 router.get("/:complaintId", authenticate, async (req, res) => {
   const { complaintId } = req.params;
   try {
@@ -60,24 +56,20 @@ router.get("/:complaintId", authenticate, async (req, res) => {
   }
 });
 
-// Add feedback to a completed complaint
 router.put("/:complaintId/feedback", authenticate, async (req, res) => {
   const { complaintId } = req.params;
   const { text } = req.body;
 
   try {
-    // Find the complaint
     const complaint = await Complaint.findById(complaintId);
     if (!complaint) {
       return res.status(404).json({ message: "Complaint not found" });
     }
 
-    // Ensure the complaint is completed before allowing feedback
     if (complaint.status !== "completed") {
       return res.status(400).json({ message: "You can only provide feedback for completed complaints" });
     }
 
-    // Add feedback to the complaint
     complaint.feedback.push({
       userId: req.userId,
       text,

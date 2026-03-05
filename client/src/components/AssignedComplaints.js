@@ -4,6 +4,7 @@ import './AssignedComplaints.css';
 
 function AssignedComplaints() {
   const [assignedComplaints, setAssignedComplaints] = useState([]);
+  const [activeStatusFilter, setActiveStatusFilter] = useState("all");
   const [error, setError] = useState(null);
   const [successMessage, setSuccessMessage] = useState(null);
 
@@ -66,6 +67,73 @@ function AssignedComplaints() {
   return (
     <div>
       <h3>Assigned Complaints</h3>
+      <div style={{ display: "flex", gap: "12px", marginBottom: "10px", flexWrap: "wrap" }}>
+        <span>Status:</span>
+        <button
+          onClick={() => setActiveStatusFilter("all")}
+          style={{
+            padding: "6px 10px",
+            borderRadius: "999px",
+            border: "none",
+            cursor: "pointer",
+            background:
+              activeStatusFilter === "all"
+                ? "linear-gradient(135deg,#667eea,#764ba2)"
+                : "rgba(30,41,59,0.8)",
+            color: "#f9fafb",
+          }}
+        >
+          All
+        </button>
+        <button
+          onClick={() => setActiveStatusFilter("pending")}
+          style={{
+            padding: "6px 10px",
+            borderRadius: "999px",
+            border: "none",
+            cursor: "pointer",
+            background:
+              activeStatusFilter === "pending"
+                ? "linear-gradient(135deg,#f59e0b,#d97706)"
+                : "rgba(30,41,59,0.8)",
+            color: "#f9fafb",
+          }}
+        >
+          Pending
+        </button>
+        <button
+          onClick={() => setActiveStatusFilter("in progress")}
+          style={{
+            padding: "6px 10px",
+            borderRadius: "999px",
+            border: "none",
+            cursor: "pointer",
+            background:
+              activeStatusFilter === "in progress"
+                ? "linear-gradient(135deg,#3b82f6,#1d4ed8)"
+                : "rgba(30,41,59,0.8)",
+            color: "#f9fafb",
+          }}
+        >
+          In Progress
+        </button>
+        <button
+          onClick={() => setActiveStatusFilter("completed")}
+          style={{
+            padding: "6px 10px",
+            borderRadius: "999px",
+            border: "none",
+            cursor: "pointer",
+            background:
+              activeStatusFilter === "completed"
+                ? "linear-gradient(135deg,#10b981,#059669)"
+                : "rgba(30,41,59,0.8)",
+            color: "#f9fafb",
+          }}
+        >
+          Completed
+        </button>
+      </div>
       {error && <div className="error">{error}</div>}
       {successMessage && <div className="success">{successMessage}</div>}
       <table>
@@ -81,7 +149,13 @@ function AssignedComplaints() {
         </thead>
         <tbody>
           {assignedComplaints.length > 0 ? (
-            assignedComplaints.map((complaint) => (
+            assignedComplaints
+              .filter((complaint) => {
+                if (activeStatusFilter === "all") return true;
+                const status = (complaint.status || "pending").toLowerCase();
+                return status === activeStatusFilter;
+              })
+              .map((complaint) => (
               <tr key={complaint._id}>
                 <td>{complaint.title}</td>
                 <td>{complaint.department}</td>
