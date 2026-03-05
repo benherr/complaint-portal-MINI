@@ -1,81 +1,160 @@
-# CampusCare
-<p align="center"> <img src="./Images/banner.png" width="100%"> </p>
-<p align="center"> A full-stack MERN application that allows students to report infrastructure issues within their college campus and enables administrators to manage, track, and resolve complaints efficiently. </p>
 
-## 🚀 Project Overview
 
-The College Infrastructure Complaint Portal is designed to streamline the process of reporting and resolving infrastructure-related problems in educational institutions.
+<p align="center">
+  <img src="./Images/bannerr.png" width="100%">
+</p>
 
-Students can easily submit complaints about issues such as:
+<h1 align="center">CampusCare</h1>
 
-Broken classroom equipment
+<p align="center">
+A web platform for students to report infrastructure issues and for administrators to track and resolve complaints efficiently.
+</p>
 
-Electrical problems
 
-Water supply issues
+---
 
-Internet connectivity
+# 🚀 Overview
 
-Damaged furniture
+The **CampusCare** is a web-based application that allows students to report infrastructure issues within their college campus.
 
-Maintenance issues
+The system enables administrators to manage complaints, track issues, and ensure timely resolution, improving communication between students and the administration.
 
-Administrators can monitor complaints, update their status, and ensure quick resolution.
-## 🛠 Tech Stack
-### Frontend
+---
 
-React.js
+# ✨ Key Features
 
-HTML5
+- 📝 Submit infrastructure complaints
+- 📊 Track complaint status
+- 👨‍💼 Admin dashboard for managing complaints
+- 🔍 View and filter complaint records
+- 🔐 Secure login system
+- 📱 Responsive user interface
 
-CSS3
+---
 
-JavaScript
+# 🖼️ Application Screenshots
 
-### Backend
+### 🏠 Home Page
 
-Node.js
+<p align="center">
+<img src="./Images/Home.png" width="420"/>
+&nbsp;&nbsp;
+<img src="./Images/home2.png" width="420"/>
+&nbsp;&nbsp;
+<img src="./Images/login.png" width="420"/>
+&nbsp;&nbsp;
+<img src="./Images/register.png" width="420"/>
+</p>
 
-Express.js
+---
 
-### Database
+### Complaint Submission
 
-MongoDB
+<p align="center">
+<img src="./Images/complaint_form.png" width="420"/>
+&nbsp;&nbsp;
+<img src="./Images/complaint_his.png" width="420"/>
+</p>
 
-Other Tools
+---
 
-Git & GitHub
+### Admin Dashboard
 
-REST APIs
+<p align="center">
+<img src="./Images/admin_dash.png" width="420"/>
+&nbsp;&nbsp;
+<img src="./Images/admin_w_list.png" width="420"/>
+&nbsp;&nbsp;
+<img src="./Images/add_w.png" width="420"/>
+</p>
 
-Postman (API testing)
+---
 
-## ✨ Features
+### Worker Dashboard
 
-✔ Student complaint submission
-✔ Admin dashboard for complaint management
-✔ Complaint tracking system
-✔ Real-time complaint status updates
-✔ Secure login authentication
-✔ Categorized complaint system
-✔ Responsive user interface
+<p align="center">
+<img src="./Images/w_login.png" width="420"/>
+&nbsp;&nbsp;
+<img src="./Images/w_dash.png" width="420"/>
+&nbsp;&nbsp;
 
-## 🖥 System Architecture
+---
+
+# 🏗️ System Architecture
+
+```mermaid
+flowchart LR
+    A[Student/User] --> B[React Frontend]
+    B --> C[Node.js + Express API]
+    C --> D[MongoDB Database]
+    C --> E[Admin Dashboard]
+
 ```
-Frontend (React)
-        |
-        |
-   REST API
-        |
-        |
-Backend (Node.js + Express)
-        |
-        |
-   MongoDB Database```
+## 🛠️ Tech Stack
 
+**Frontend**
+- React.js
+- HTML5
+- CSS3
+- JavaScript
+
+**Backend**
+- Node.js
+- Express.js
+
+**Database**
+- MongoDB
+
+**Tools**
+- Git
+- GitHub
+- VS Code
+
+## ⚙️ Installation & Setup
+
+Follow the steps below to run the project locally.
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/benherr/complaint-portal-MINI.git
+cd complaint-portal-MINI
 ```
 
+### 2️⃣ Install Dependencies
 
+```bash
+npm install
+```
 
+### 3️⃣ Start the Application
+start the server
+```
+npm start
+```
+start the client
+```bash
+cd client/
+npm start
+```
 
+### 4️⃣ Open in Browser
 
+Visit the following URL in your browser:
+
+```
+http://localhost:3000
+```
+You can now start using the **CampusCare** locally.
+
+👨‍💻 Author
+
+Benher Basheer
+
+<a href= "https://github.com/benherr" >GitHub</a>
+
+<a href ="https://www.linkedin.com/in/benher-basheer-371347377/">LinkedIn</a>
+
+⭐ Support
+
+If you found this project helpful, please give it a ⭐ on GitHub.
